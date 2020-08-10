@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>Weather Forecast</title>
+</head>
+<body>
+<div>
+<form method="POST">
+    <center>
+  <div style="margin-top:20px">
+    <div id="inputfield"><input type="text" name="cityname" class="form-control" placeholder="Search City" style="width:300px" required></div>
+    {% csrf_token %}
+    <div id="inputfield" class="subbutton"><input type="submit" value="Search" ></div>
+  </div>
+        {% if err_message %}
+        <div class="alert alert-danger" style="width: 20%; padding: 8px; margin-bottom: 10px;">
+            <h4>{{err_message}}</h4>
+        </div>
+        {% endif %}
+     </center>
+ </form>
+
+    <center>
+        <div class="div1">
+            <h4 style="text-align:center;">Weather Status of {{city_weather.city}}</h4>
+            <span style="font-size:40px;">{{city_weather.temperature}}&#8451; <img src="http://api.openweathermap.org/img/w/{{city_weather.icon}}.png" height="50px"></span><br>
+            <span style="font-size:20px;">{{city_weather.description}}</span><br><br>
+            <span> Max:&nbsp{{city_weather.temp_max}}&#8451;</span><br>
+            <span>Min:&nbsp{{city_weather.temp_min}}&#8451;</span><br>
+            <span>Feels Like:&nbsp{{city_weather.feels_like}}&#8451;</span><br>
+        <div class="subdiv">
+            <span>Humidity:&nbsp{{city_weather.humidity}}%</span><br>
+            <span>Wind speed:&nbsp{{city_weather.wind_speed}}km/h</span>
+            {{city_weather.visibility}}
+        </div>
+        </div>
+    </center>
+
+</div>
+
+
+</body>
+</html>

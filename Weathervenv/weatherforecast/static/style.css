@@ -1,0 +1,45 @@
+body{
+    font-family:arial;
+    background-image: url(https://1059theregion.com/wp-content/uploads/2018/07/weather_banner_1059-the-region.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.subbutton{
+    margin-right: 100px;
+    margin-left: 100px;
+
+
+}
+.subbutton input{
+    background: #0d151933;
+}
+#inputfield input{
+        width: 10%;
+        padding: 8px;
+        margin-bottom: 10px;
+        background: #030406bf;
+        color: #bec7d4f0;
+        border: 0px;
+
+}
+
+.div1{
+        width:500px;
+        height:300px;
+        color: black;
+        padding:10px;
+        text-align: left;
+        border: 1px solid black;
+        background: #63657385;
+}
+.subdiv{
+    margin-top: -135px;
+    color: black;
+    margin-left: 250px;
+    width: 236px;
+    height: 148px;
+    padding: 10px;
+    text-align: left;
+    border: 0px solid black;
+    background: ##63657300;
+}
